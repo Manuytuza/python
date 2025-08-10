@@ -1,5 +1,6 @@
 import turtle
 
+
 # Crear ventana
 window = turtle.Screen()
 
@@ -21,4 +22,4 @@ tortuga.end_fill()
 # Dejar ventana abierta
 window.mainloop()
 
-1+5=
+
