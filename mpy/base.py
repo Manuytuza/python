@@ -1,32 +1,28 @@
-stock = "Iphone, Mac, Airpods"
-age = "4 years, and 11 months"
-fin_code = f"Dios es primero, hagamoslo por Alice tiene {age} años"
+stock = ["Iphone: 10", "Mac: 5", "Airpods.14"]
+age_years = 4
+age_months = 11
+fin_code =(
+    f"Dios es primero, hagamoslo por Alice tiene {age_years} años, {age_months} meses y es la mejor programadora del mundo"
+) 
 
 
-def sum (x,y):
+def add_numbers(x: int, y: int) -> int:
     return x + y
 
-def list_client():
+def list_product():
     global stock
     print(stock)
 
-def create_client(client_name):
-    list_client()
+def add_product(name:str , quanty: int):
     global stock
-    _add_coma()
-    stock += client_name
-    list_client()
+    item = f"{name}: {quanty}"
+    stock.append(item)
+    print(f"Producto {name} agregado con cantidad {quanty}")
+    list_product()
     
-
-def _add_coma():
-    global stock
-    stock +=(", ")
-
-
-
 if __name__ == "__main__":
-    create_client("Ipad")
-    print(sum(2,3))
+    add_product("Ipad", 3)
+    print(add_numbers(2,3))
     print(fin_code)
 
     
