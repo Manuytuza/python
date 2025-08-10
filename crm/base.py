@@ -7,7 +7,10 @@ fin_code =(
 
 
 def add_numbers(x: int, y: int) -> int:
-    return x + y
+    x = int(input("Ingresa primer número: "))
+    y = int(input("Ingresa segundo número: "))
+    print(f"La suma de {x} + {y} es igual a {x + y}")
+
 
 def list_product():
     global stock
@@ -19,11 +22,19 @@ def add_product(name:str , quanty: int):
     stock.append(item)
     print(f"Producto {name} agregado con cantidad {quanty}")
     list_product()
-    
+
+def main():
+    nombre = input("¿Cómo te llamas? ")
+    print(f"Hola, {nombre}. Bienvenido a Python en tu MacBook.")   
+
+
+
 if __name__ == "__main__":
     add_product("Ipad", 3)
-    print(add_numbers(2,3))
+    add_numbers()
     print(fin_code)
+    main()
+
 
     
     
