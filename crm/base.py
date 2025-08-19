@@ -6,7 +6,7 @@ fin_code =(
 ) 
 
 
-def add_numbers(x: int, y: int) -> int:
+def add_numbers() -> int:
     x = int(input("Ingresa primer número: "))
     y = int(input("Ingresa segundo número: "))
     print(f"La suma de {x} + {y} es igual a {x + y}")
@@ -34,12 +34,4 @@ if __name__ == "__main__":
     add_numbers()
     print(fin_code)
     main()
-
-
     
-    
-
-
-
-
-
