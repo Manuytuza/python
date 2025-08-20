@@ -6,6 +6,7 @@ def reporte_tienda():
     
     # Ingreso de datos
     venta_con_igv = float(input("Venta Total con IGV (S/.): ") or 0)
+    venta_con_igv_mes = float(input("Venta Total del mes con IGV (S/.): ") or 0)
     accesorios_con_igv = float(input("Monto de accesorios vendidos con IGV (S/.): ") or 0)
     iphones = int(input("Cantidad iPhone vendidos: ") or 0)
     macs = int(input("Cantidad Mac vendidos: ") or 0)
@@ -23,16 +24,18 @@ def reporte_tienda():
     
     # Cálculos
     venta_sin_igv = venta_con_igv / (1 + IGV)
+    venta_sin_igv_mes = venta_con_igv_mes / (1 + IGV)
     accesorios_sin_igv = accesorios_con_igv / (1 + IGV)
-    cumplimiento_meta = (venta_sin_igv / META_MENSUAL) * 100
+    cumplimiento_meta = (venta_sin_igv_mes / META_MENSUAL) * 100 if META_MENSUAL > 0 else 0
     attach_rate = (accesorios_sin_igv / venta_sin_igv) * 100 if venta_sin_igv > 0 else 0
     tasa_conversion = (transacciones / trafico) * 100 if trafico > 0 else 0
     
     # Resultados
-    print("\n=== Tienda Arequipa ===")
+    print("\n")  # Salto de línea antes de empezar
+    print("\nReporte Tienda Arequipa ")
     print(f"Venta Total sin IGV: S/. {venta_sin_igv:,.2f}")
     print(f"Cumplimiento Meta Mensual: {cumplimiento_meta:.2f}%")
-    print(f"Attach Rate: {attach_rate:.2f}%")
+    print(f"Attach: {attach_rate:.2f}%")
     print(f"iPhone: {iphones}")
     print(f"Mac: {macs}")
     print(f"iPad: {ipads}")
